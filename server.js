@@ -13,16 +13,15 @@ app.post("/post", (req,res) =>{
     res.send(`Welcome ${req.body.user}`);
 })
 
-app.delete("/delete", (req,res) =>{
-    let taskId = req.body.taskId;
-    res.send("{delete : true}")
-})
-
 app.put("/put/:id", (req,res) =>{
     let {id} = req.params;
     res.send(`Task ${id} has been updated`);
 })
 
+app.delete("/delete", (req,res) =>{
+    let taskId = req.body.taskId;
+    res.send("{delete : true}")
+})
 
 app.listen(app.get('port'), () =>{
     console.log(`Server on port ${app.get('port')}`);
